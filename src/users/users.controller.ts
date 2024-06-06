@@ -20,4 +20,9 @@ export class UsersController {
     async update(@Param('id') id: string, @Body() user: Partial<User>): Promise<void> {
       this.usersService.update(Number(id), user);
     }
+
+    @Get(':id')
+    async findOne(@Param('id') id: string): Promise<User> {
+      return await this.usersService.findOne(Number(id));
+    }
   }
