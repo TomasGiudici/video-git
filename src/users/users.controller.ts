@@ -21,7 +21,7 @@ export class UsersController {
       this.usersService.update(Number(id), user);
     }
 
-    @Get(':nombre')
+    @Get(':id')
     async findOne(@Param('id') id: string): Promise<User> {
       return await this.usersService.findOne(Number(id));
     }
